@@ -1,0 +1,146 @@
+html {
+   box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'PT Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.86;
+
+  text-transform: uppercase;
+
+  margin: 0;
+  padding: 0;
+
+  color: #000;
+  background-color: #f2f2f2;
+
+  background-image: url(../img/background-photo.jpg);
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+
+a {
+  text-decoration: none;
+
+  color: #000;
+}
+
+.visually-hidden {
+  position: absolute;
+
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+
+  border: 0;
+}
+
+.header {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* Навигация */
+
+.navigation-list {
+  list-style-type: none;
+
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 56px;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-item {
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  color: #000000;
+  line-height: 56px;
+  width: 20%;
+
+  text-align: center;
+
+  background-color: white;
+}
+
+.navigation-item:nth-child(1) {
+  order: 2;
+}
+
+.navigation-item:nth-child(2),
+.navigation-item:nth-child(3) {
+  order: 1;
+}
+
+.navigation-item:nth-child(4),
+.navigation-item:nth-child(5) {
+  order: 3;
+}
+
+.navigation-item:hover a,
+.navigation-item:focus a {
+  color: #81b3d2;
+}
+
+.navigation-item:active a {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.navigation-item.current a,
+.navigation-item.current:hover a,
+.navigation-item.current:focus a,
+.navigation-item.current:active a {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+/* основное наполнение страницы */
+
+.main {
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 76px;
+}
+
+.welcome {
+  text-align: center;
+}
+
+
+
+
+
+.test1 {
+   background-color: rgb(102, 65, 93);
+}
+.test2 {
+   background-color: rgb(73, 65, 102);
+}
+
+*, *::after, *::before {
+   outline-style: dashed;
+   outline-color: darkorange;
+   outline-width: 1px;
+}
+*/
+/*
+body {
+   background-color: #555555;
+}
+*/
