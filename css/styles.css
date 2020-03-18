@@ -369,6 +369,7 @@ a {
   font-size: 10px;
 
   display: flex;
+  align-items: center;
 }
 
 .footer-social-item:not(:last-child) {
