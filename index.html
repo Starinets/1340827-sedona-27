@@ -12,7 +12,7 @@
       <header>
         <nav>
           <ul class="navigation-list">
-            <li class="navigation-item"><a href="#">Лого</a></li>
+            <li class="navigation-item logo"><a>Лого</a></li>
             <li class="navigation-item current"><a>Информация</a></li>
             <li class="navigation-item"><a href="#">Фото и видео</a></li>
             <li class="navigation-item"><a href="#">карта штата</a></li>
@@ -98,39 +98,39 @@
           <button class="search-button">Поиск гостиницы в Седоне</button>
 
           <form
-            class="visually-hidden"
+            class=" reservation-form"
             action="https://echo.htmlacademy.ru"
             method="POST"
           >
             <h3 class="visually-hidden">Поиск гостиницы в Седоне</h3>
 
-            <label>
-              дата заезда:
+            <div class="form-label-wrapper long">
+              <label>дата заезда:</label>
+              <input name="date-cheking" type="text" />
+              <button class="form-calendar" type="button"></button>
+            </div>
+
+            <div class="form-label-wrapper long">
+              <label>дата выезда:</label>
               <input type="text" />
-              <button type="button"></button>
-            </label>
+              <button class="form-calendar" type="button"></button>
+            </div>
 
-            <label>
-              дата выезда:
+            <div class="form-label-wrapper short">
+              <label>взрослые:</label>
+              <button class="button-minus" type="button">-</button>
               <input type="text" />
-              <button type="button"></button>
-            </label>
+              <button class="button-plus" type="button">+</button>
+            </div>
 
-            <label>
-              взрослые:
-              <button></button>
-              <input type="number" />
-              <button type="button"></button>
-            </label>
+            <div class="form-label-wrapper short">
+              <label class="form-label-children">дети:</label>
+              <button class="button-minus" type="button">-</button>
+              <input type="text" />
+              <button class="button-plus" type="button">+</button>
+            </div>
 
-            <label>
-              дети:
-              <button></button>
-              <input type="number" />
-              <button type="button"></button>
-            </label>
-
-            <button type="submit">Найти</button>
+            <button class="reservation-form-submit" type="submit">Найти</button>
           </form>
         </section>
 
@@ -164,21 +164,20 @@
         </div>
         <ul class="footer-social-list">
           <li class="footer-social-item twitter">
-            <a href="https://twitter.com/" aria-label="Наша сраничка в twitter">
-              twitter</a
+            <a href="https://twitter.com/" aria-label="Наша сраничка в twitter"
+              >twitter</a
             >
           </li>
           <li class="footer-social-item facebook">
             <a
               href="https://www.facebook.com/"
               aria-label="Наша сраничка в facebook"
-            >
-              facebook</a
+              >facebook</a
             >
           </li>
           <li class="footer-social-item youtube">
-            <a href="https://www.youtube.com/" aria-label="Наш канал в youtube">
-              youtube</a
+            <a href="https://www.youtube.com/" aria-label="Наш канал в youtube"
+              >youtube</a
             >
           </li>
         </ul>
