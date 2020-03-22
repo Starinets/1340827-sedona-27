@@ -12,7 +12,9 @@
       <header>
         <nav>
           <ul class="navigation-list">
-            <li class="navigation-item logo"><a>Лого</a></li>
+            <li class="navigation-item logo">
+              <a aria-label="Логотип сайта Седоны">Лого</a>
+            </li>
             <li class="navigation-item current"><a>Информация</a></li>
             <li class="navigation-item"><a href="#">Фото и видео</a></li>
             <li class="navigation-item"><a href="#">карта штата</a></li>
@@ -48,17 +50,17 @@
               </div>
 
               <ul class="recommendations">
-                <li class="recommendations-item">
+                <li class="recommendations-item appartments">
                   <h4>Жилье</h4>
                   <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
                 </li>
-                <li class="recommendations-item">
+                <li class="recommendations-item food">
                   <h4>Еда</h4>
                   <p>
                     Всегда заказывайте фирменный бургер, вы не разочаруетесь!
                   </p>
                 </li>
-                <li class="recommendations-item">
+                <li class="recommendations-item souvenirs">
                   <h4>Сувериры</h4>
                   <p>Не только китайского, но и местного производства!</p>
                 </li>
@@ -105,29 +107,62 @@
             <h3 class="visually-hidden">Поиск гостиницы в Седоне</h3>
 
             <div class="form-label-wrapper long">
-              <label>дата заезда:</label>
-              <input name="date-cheking" type="text" />
+              <label for="checkin-date">дата заезда:</label>
+              <input
+                name="checkin-date"
+                name="date-cheking"
+                type="text"
+                placeholder="24 апреля 2017"
+              />
               <button class="form-calendar" type="button"></button>
             </div>
 
             <div class="form-label-wrapper long">
-              <label>дата выезда:</label>
-              <input type="text" />
+              <label for="checkout-date">дата выезда:</label>
+              <input
+                name="checkout-date"
+                type="text"
+                placeholder="24 апреля 2017"
+              />
               <button class="form-calendar" type="button"></button>
             </div>
 
             <div class="form-label-wrapper short">
-              <label>взрослые:</label>
-              <button class="button-minus" type="button">-</button>
-              <input type="text" />
-              <button class="button-plus" type="button">+</button>
+              <label for="adult">взрослые:</label>
+              <button
+                class="button-minus"
+                type="button"
+                aria-label="уменьшить количество взрослых"
+              >
+                -
+              </button>
+              <input name="adult" type="text" placeholder="2" value="2" />
+              <button
+                class="button-plus"
+                type="button"
+                aria-label="увеличить количество взрослых"
+              >
+                +
+              </button>
             </div>
 
             <div class="form-label-wrapper short">
-              <label class="form-label-children">дети:</label>
-              <button class="button-minus" type="button">-</button>
-              <input type="text" />
-              <button class="button-plus" type="button">+</button>
+              <label for="children" class="form-label-children">дети:</label>
+              <button
+                class="button-minus"
+                type="button"
+                aria-label="уменьшить количество детей"
+              >
+                -
+              </button>
+              <input name="children" type="text" placeholder="2" value="2" />
+              <button
+                class="button-plus"
+                type="button"
+                aria-label="увеличить количество детей"
+              >
+                +
+              </button>
             </div>
 
             <button class="reservation-form-submit" type="submit">Найти</button>
@@ -182,7 +217,7 @@
           </li>
         </ul>
         <div class="footer-htmlacademy">
-          <a href="">webside by</a>
+          <a href="#">webside by </a>
         </div>
       </footer>
     </div>

@@ -136,7 +136,7 @@ a {
 .navigation-item.current a:hover,
 .navigation-item.current a:focus,
 .navigation-item.current a:active {
-  color: rgba(0, 0, 0, 0.3);
+  color: #766357;
 }
 
 /* ---------------------- Основное наполнение страницы ---------------------- */
@@ -227,7 +227,7 @@ a {
 
 .reason-wrapper {
   width: 100%;
-  height: 256px;
+  min-height: 256px;
 
   padding-right: 800px;
 
@@ -238,14 +238,17 @@ a {
   content: "";
   display: block;
   width: 800px;
-  height: 256px;
+  height: 100%;
 
   position: absolute;
   right: 0;
   top: 0;
 
+  background-color: #eeeeee;
+
   background-image: url(../img/feature-picture-1.jpg);
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .recommendations {
@@ -256,7 +259,7 @@ a {
 
 .recommendations-item {
   width: 400px;
-  height: 256px;
+  min-height: 256px;
 
   background-color: white;
 }
@@ -270,9 +273,45 @@ a {
   padding: 0 60px;
 }
 
+.recommendations-item.appartments > h4:before {
+  content: "";
+
+  display: block;
+  width: 75px;
+  height: 72px;
+  margin: 0 auto;
+
+  background-image: url(../img/icon-1.svg);
+  background-repeat: no-repeat;
+}
+
+.recommendations-item.food > h4:before {
+  content: "";
+
+  display: block;
+  width: 74px;
+  height: 70px;
+  margin: 0 auto;
+
+  background-image: url(../img/icon-3.svg);
+  background-repeat: no-repeat;
+}
+
+.recommendations-item.souvenirs > h4:before {
+  content: "";
+
+  display: block;
+  width: 64px;
+  height: 76px;
+  margin: 0 auto;
+
+  background-image: url(../img/icon-2.svg);
+  background-repeat: no-repeat;
+}
+
 .reason2 {
   width: 100%;
-  height: 256px;
+  min-height: 256px;
 
   padding-left: 800px;
   position: relative;
@@ -282,29 +321,32 @@ a {
   content: "";
   display: block;
   width: 800px;
-  height: 256px;
+  height: 100%;
 
   position: absolute;
   left: 0;
   top: 0;
 
+  background-color: #eeeeee;
+
   background-image: url(../img/feature-picture-2.jpg);
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .reason3 {
   width: 400px;
-  height: 256px;
+  min-height: 256px;
 }
 
 .reason4 {
   width: 400px;
-  height: 256px;
+  min-height: 256px;
 }
 
 .reason5 {
   width: 400px;
-  height: 256px;
+  min-height: 256px;
 }
 
 /* ---------------------- Модальное окно резервирования --------------------- */
@@ -341,12 +383,21 @@ a {
   background-color: #766357;
 }
 
+.search-button:hover,
+.search-button:focus {
+  background-color: #604e43;
+}
+
+.search-button:active {
+  background-color: #503e33;
+  color: rgba(255, 255, 255, 0.3);
+}
+
 /* ---------------------------------- Форма --------------------------------- */
 
 .reservation-form {
   position: absolute;
   left: calc(50% - 284px);
-  top: 242px;
 
   width: 568px;
 
@@ -369,6 +420,37 @@ a {
   justify-content: space-between;
 
   margin-bottom: 30px;
+
+  position: relative;
+}
+
+.form-calendar {
+  width: 38px;
+  height: 38px;
+
+  border: 0;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  background-color: #cacaca;
+  /* не работает в IE11 и ранее */
+  -webkit-mask-image: url(../img/calendar.svg);
+  mask-image: url(../img/calendar.svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.form-calendar:hover,
+.form-calendar:focus {
+  background-color: #000000;
+}
+
+.form-calendar:active {
+  background-color: #81b3d2;
 }
 
 .form-label-wrapper.short {
@@ -389,7 +471,7 @@ a {
   height: 38px;
 }
 
-.form-label-wrapper > button {
+.form-label-wrapper.short > button {
   width: 38px;
   height: 38px;
 
@@ -399,14 +481,41 @@ a {
 }
 
 .form-label-wrapper.long > input {
+  font-weight: bold;
+
   width: 308px;
   height: 38px;
 
   margin-left: auto;
+  padding-left: 16px;
 
   border: 0;
 
   background-color: #f2f2f2;
+  border: 1px solid transparent;
+
+  outline: none;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #000000;
+  opacity: 1; /* Firefox */
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #000000;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #000000;
+}
+
+.form-label-wrapper.long > input:hover {
+  background-color: #ebebeb;
+  border: 1px solid transparent;
+}
+
+.form-label-wrapper.long > input:focus {
+  background-color: #ffffff;
+  border: 1px solid #ebebeb;
 }
 
 .form-label-children {
@@ -414,8 +523,12 @@ a {
 }
 
 .form-label-wrapper.short > input {
+  font-weight: bold;
+
   width: 38px;
   height: 38px;
+
+  padding-left: 16px;
 
   border: 0;
 
@@ -437,7 +550,22 @@ a {
   margin-left: auto;
 }
 
+.button-minus:hover,
+.button-plus:hover {
+  color: #000000;
+  background-color: #ebebeb;
+}
+
+.button-minus:active,
+.button-plus:active {
+  color: #82b4d3;
+}
+
 .reservation-form-submit {
+  font-size: 21px;
+  font-weight: bold;
+  color: #ffffff;
+
   width: 100%;
   height: 58px;
 
@@ -447,11 +575,21 @@ a {
   text-transform: uppercase;
 }
 
+.reservation-form-submit:hover,
+.reservation-form-submit:focus {
+  background-color: #669ec0;
+}
+
+.reservation-form-submit:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: #5496bd;
+}
+
 /* ---------------------------------- карта --------------------------------- */
 
 .map {
   width: 1200px;
-  height: 470px;
+  height: 474px;
 
   position: relative;
 
@@ -500,6 +638,11 @@ a {
 
   display: flex;
   flex-direction: column;
+}
+
+.footer-contacts > p,
+.footer-contacts > p {
+  text-align: left;
 }
 
 /* ---------------------------- Социальные иконки --------------------------- */
@@ -572,12 +715,38 @@ a {
   opacity: 0.3;
 }
 
+.footer-htmlacademy {
+  display: flex;
+  align-items: center;
+}
+
+.footer-htmlacademy > a {
+  vertical-align: middle;
+}
+
 .footer-htmlacademy a::after {
   content: "";
-  display: block;
+  display: inline-block;
+  vertical-align: middle;
+
   width: 115px;
   height: 41px;
-  background: url(../img/logo-htmlacademy.svg) no-repeat;
+
+  background-color: #000000;
+  /* не работает в IE11 и ранее */
+  -webkit-mask-image: url(../img/logo-htmlacademy.svg);
+  mask-image: url(../img/logo-htmlacademy.svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.footer-htmlacademy a:hover::after,
+.footer-htmlacademy a:focus::after {
+  background-color: #81b3d2;
+}
+
+.footer-htmlacademy a:active::after {
+  background-color: #bdbbbc;
 }
 
 .test1 {
@@ -587,7 +756,7 @@ a {
 .test2 {
   background-color: rgb(73, 65, 102);
 }
-
+/*
 *,
 *::after,
 *::before {
